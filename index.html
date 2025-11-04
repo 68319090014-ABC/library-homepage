@@ -1,30 +1,197 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแรกห้องสมุด</title>
-</head>
-<body>
-    <header>
-        <h1>ห้องสมุดวิทยาลัย</h1>
-        <nav>
-            <ul>
-                <li><a href="#">หน้าแรก</a></li>
-                <li><a href="#">หนังสือ</a></li>
-                <li><a href="#">ติดต่อ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>ยินดีต้อนรับ</h2>
-            <p>เว็บไซต์ห้องสมุดเพื่อการเรียนรู้</p>
-    </section>
-</main>
-<footer>
-    <p>2025 ห้องสมุดวิทยาลัย by Adithep </p>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>หน้าแรกห้องสมุด</title>
+        <link href="./dist/output.css" rel="stylesheet">
+        <style>
+            @keyframes fadeInDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+            }
+
+            .animate-fade-in-down {
+                animation: fadeInDown 0.8s ease-out;
+            }
+
+            .animate-fade-in-up {
+                animation: fadeInUp 0.8s ease-out;
+            }
+
+            .animate-slide-in-left {
+                animation: slideInLeft 0.8s ease-out;
+            }
+
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+
+            .animate-pulse-slow {
+                animation: pulse 2s ease-in-out infinite;
+            }
+
+            .card-1 { animation-delay: 0.1s; }
+            .card-2 { animation-delay: 0.2s; }
+            .card-3 { animation-delay: 0.3s; }
+
+            .feature-1 { animation-delay: 0.1s; }
+            .feature-2 { animation-delay: 0.2s; }
+            .feature-3 { animation-delay: 0.3s; }
+
+            .book-card:hover .book-icon {
+                animation: pulse 0.5s ease-in-out;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50 min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg animate-fade-in-down">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold animate-pulse-slow">📚 ห้องสมุดวิทยาลัย</h1>
+                <nav>
+                    <ul class="flex gap-6">
+                        <li><a href="index.html" class="hover:text-blue-200 transition duration-200 font-medium hover:scale-110 inline-block">หน้าแรก</a></li>
+                        <li><a href="#" class="hover:text-blue-200 transition duration-200 font-medium hover:scale-110 inline-block">หนังสือ</a></li>
+                        <li><a href="login.html" class="bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition duration-200 font-medium hover:scale-105 hover:shadow-lg inline-block">เข้าสู่ระบบ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <!-- Welcome Section -->
+            <section class="text-center mb-12 animate-fade-in-up">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">ยินดีต้อนรับสู่ห้องสมุดออนไลน์</h2>
+                <p class="text-xl text-gray-600">เว็บไซต์ห้องสมุดเพื่อการเรียนรู้และพัฒนาความรู้</p>
+            </section>
+
+            <!-- Books Section -->
+            <section>
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 animate-slide-in-left">หนังสือแนะนำ</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Book Card 1 -->
+                    <div class="book-card bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-up card-1 hover:-translate-y-2">
+                        <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-48 flex items-center justify-center">
+                            <span class="book-icon text-6xl animate-float">📖</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">ชื่อหนังสือที่น่าสนใจ</h3>
+                            <p class="text-gray-600 mb-4">รายละเอียดหนังสือสั้น ๆ เกี่ยวกับเนื้อหาที่น่าสนใจและเป็นประโยชน์ต่อการเรียนรู้</p>
+                            <button class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-all duration-200 font-medium hover:scale-105 hover:shadow-lg">
+                                อ่านเพิ่มเติม
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 2 -->
+                    <div class="book-card bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-up card-2 hover:-translate-y-2">
+                        <div class="bg-gradient-to-br from-purple-400 to-purple-600 h-48 flex items-center justify-center">
+                            <span class="book-icon text-6xl animate-float" style="animation-delay: 0.5s;">📚</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">หนังสือวิทยาศาสตร์</h3>
+                            <p class="text-gray-600 mb-4">เรียนรู้เกี่ยวกับวิทยาศาสตร์และเทคโนโลยีที่ทันสมัย พร้อมตัวอย่างที่น่าสนใจ</p>
+                            <button class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-all duration-200 font-medium hover:scale-105 hover:shadow-lg">
+                                อ่านเพิ่มเติม
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 3 -->
+                    <div class="book-card bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-up card-3 hover:-translate-y-2">
+                        <div class="bg-gradient-to-br from-orange-400 to-orange-600 h-48 flex items-center justify-center">
+                            <span class="book-icon text-6xl animate-float" style="animation-delay: 1s;">📕</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">วรรณกรรมไทย</h3>
+                            <p class="text-gray-600 mb-4">สำรวจวรรณกรรมไทยคลาสสิกและร่วมสมัย ที่สะท้อนวัฒนธรรมและภูมิปัญญา</p>
+                            <button class="w-full bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-all duration-200 font-medium hover:scale-105 hover:shadow-lg">
+                                อ่านเพิ่มเติม
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="mt-12 bg-white rounded-lg shadow-md p-8 animate-fade-in-up">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">บริการของเรา</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center animate-fade-in-up feature-1 hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 animate-pulse-slow">🔍</div>
+                        <h4 class="font-bold text-gray-800 mb-2">ค้นหาหนังสือ</h4>
+                        <p class="text-gray-600">ค้นหาหนังสือที่คุณต้องการได้อย่างรวดเร็ว</p>
+                    </div>
+                    <div class="text-center animate-fade-in-up feature-2 hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 animate-pulse-slow" style="animation-delay: 0.5s;">💾</div>
+                        <h4 class="font-bold text-gray-800 mb-2">จองหนังสือ</h4>
+                        <p class="text-gray-600">จองหนังสือล่วงหน้าได้ทุกที่ทุกเวลา</p>
+                    </div>
+                    <div class="text-center animate-fade-in-up feature-3 hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-3 animate-pulse-slow" style="animation-delay: 1s;">📱</div>
+                        <h4 class="font-bold text-gray-800 mb-2">อ่านออนไลน์</h4>
+                        <p class="text-gray-600">อ่านหนังสือออนไลน์ผ่านทุกอุปกรณ์</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white mt-12 animate-fade-in-up">
+            <div class="container mx-auto px-4 py-6 text-center">
+                <p class="text-gray-300">© 2025 ห้องสมุดวิทยาลัย by Adithep</p>
+                <p class="text-gray-400 text-sm mt-2">พัฒนาด้วย ❤️ เพื่อการเรียนรู้ที่ดีขึ้น</p>
+            </div>
+        </footer>
+    </body>
 </html>
-<link rel="stylesheet" href="style.css">

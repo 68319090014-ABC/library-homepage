@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>เข้าสู่ระบบ - ห้องสมุดวิทยาลัย</title>
+        <link href="./dist/output.css" rel="stylesheet">
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .animate-fade-in {
+                animation: fadeIn 0.6s ease-out;
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-to-br from-blue-50 to-blue-100 min-h-screen">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold">📚 ห้องสมุดวิทยาลัย</h1>
+                <nav>
+                    <ul class="flex gap-6">
+                        <li><a href="index.html" class="hover:text-blue-200 transition duration-200 font-medium">หน้าแรก</a></li>
+                        <li><a href="#" class="hover:text-blue-200 transition duration-200 font-medium">หนังสือ</a></li>
+                        <li><a href="login.html" class="text-blue-200 font-medium">เข้าสู่ระบบ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Login Section -->
+        <main class="flex items-center justify-center min-h-[calc(100vh-200px)] px-4 py-8">
+            <div class="bg-white p-8 rounded-xl shadow-xl w-full max-w-md animate-fade-in">
+                <!-- Icon -->
+                <div class="text-center mb-6">
+                    <div class="text-6xl mb-4">🔐</div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">เข้าสู่ระบบ</h2>
+                    <p class="text-gray-600">ระบบห้องสมุดออนไลน์</p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="space-y-5">
+                    <!-- Username Input -->
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
+                            ชื่อผู้ใช้
+                        </label>
+                        <input 
+                            type="text" 
+                            id="username"
+                            placeholder="กรอกชื่อผู้ใช้"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password Input -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            รหัสผ่าน
+                        </label>
+                        <input 
+                            type="password" 
+                            id="password"
+                            placeholder="กรอกรหัสผ่าน"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+                            required
+                        >
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            <span class="ml-2 text-sm text-gray-600">จดจำฉัน</span>
+                        </label>
+                        <a href="#" class="text-sm text-blue-600 hover:text-blue-700 hover:underline">
+                            ลืมรหัสผ่าน?
+                        </a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button 
+                        type="submit"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition duration-200 shadow-md hover:shadow-lg transform hover:scale-[1.02]"
+                    >
+                        เข้าสู่ระบบ
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-4 bg-white text-gray-500">หรือ</span>
+                        </div>
+                    </div>
+
+                    <!-- Register Link -->
+                    <div class="text-center">
+                        <p class="text-gray-600">
+                            ยังไม่มีบัญชี? 
+                            <a href="#" class="text-blue-600 hover:text-blue-700 font-medium hover:underline">
+                                สมัครสมาชิก
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-300">© 2025 ห้องสมุดวิทยาลัย by Adithep</p>
+                <p class="text-gray-400 text-sm mt-2">พัฒนาด้วย ❤️ เพื่อการเรียนรู้ที่ดีขึ้น</p>
+            </div>
+        </footer>
+    </body>
+</html>
